@@ -1,6 +1,8 @@
 import random
 
 
+# NOTE: DO NOT CHANGE any of these global variables
+
 # This data structure is a two dimensional list that represents a 3 by 3 tic
 # tac toe board.  It is initialized with letters to name each of the 9 cells
 # in a tic tac toe board to make it easier for a player to select which cell
@@ -27,8 +29,11 @@ currentPlayerCharacter = ''
 wins = [ 0, 0, 0 ]
 
 
+
 # This is the main loop (or controller) for the match.
 # A match is over when one of the two opponents wins 3 games.
+#
+# NOTE: DO NOT CHANGE
 def main():
 
     getPlayerNames()
@@ -46,21 +51,19 @@ def main():
         summarizeTheMatch()
 
 
-# Prompt for the player names, as a result of this:
-# players[0] should be set to the name of opponent 1
-# players[1] should be set to the name of opponent 2
+
+# Prompt for the player names, as a result of this, the global
+# variable named players should get updated:
+# - players[0] should be set to the name of opponent 1
+# - players[1] should be set to the name of opponent 2
+#
+# NOTE: IMPLEMENT
 def getPlayerNames():
     global players
-    # players[0] = input("First player name: ")
-    # players[1] = input("Second player name: ")
-    players[0] = "Shane"
-    players[1] = "Caden"
 
 
-# This function should:
-# 1. Initialize all the variables for a game
-#    - board
-# 2. Randomly determine the currentPlayerName
+
+# NOTE: DO NOT CHANGE
 def initializeGame():
 
     # Reset the board
@@ -78,36 +81,45 @@ def initializeGame():
     getPlayerStartingGame()
 
 
+
 # This function should set two global variables:
 # 1. currentPlayerName
 # 2. currentPlayerCharacter
 #
 # Set currentPlayerName to the name of one of the two players, which
-# is either players[0] or players[1].  This will be the player that
-# moves first.  The player should be chosen randomly.
+# is the value of either players[0] or players[1].  The player should
+# be chosen randomly.  This player will move first in the new game.
 #
 # Set currentPlayerCharacter to "X".  This will be the character of
-# the player who is playing first.
+# the player who is moving first.
+#
+# NOTE: IMPLEMENT
 def getPlayerStartingGame():
     global currentPlayerName, currentPlayerCharacter
-    currentPlayerName = random.choice(players)
-    currentPlayerCharacter = "X"
+
 
 
 # This function returns a list of all the possible cell names where
-# the next move can be made.  This is any cell name in the board list
-# of lists that does not contain an "X" or a "Y".
+# the next move can be made.  This is any value in the global
+# variable "board" that does not contain an "X" or a "Y".
+#
+# NOTE: IMPLEMENT
 def getPossibleCellNames():
+
+    # Initialize the list
     possibleCellNames = []
-    for row in range(3):
-        for column in range(3):
-            if (board[row][column] != 'X' and board[row][column] != 'O'):
-                possibleCellNames.append(board[row][column])
+
+    // IMPLEMENT HERE to determine all the remaining possible cell names
+
+    # Return the list of possible cell names
     return possibleCellNames
 
 
-# Prompt the current player for the cell name they want to move their
-# X or O to and then update the board.
+
+# Prompt the current player for the cell name where they want to place
+# their "X" or "O".  Afterwards, update the 'board" global variable.
+#
+# NOTE: DO NOT CHANGE
 def getCurrentPlayersMove():
     print()
     possibleCellNames = getPossibleCellNames()
@@ -121,39 +133,35 @@ def getCurrentPlayersMove():
     updateBoard(cellName, currentPlayerCharacter)
 
 
-# For the board list of lists variable, replace the value of
-# cellName with the current players character.  For example,
-# if the player's character is X, and the cell name is 'a',
-# replace the board[row][column] value of 'a' with 'X'.
+
+# For the global "board" variable, replace the value of
+# the cell name with the current player's character.  For
+# example, if the player's character is X, and the cell
+# name is 'a', replace the board[row][column] value that
+# contains an 'a' with the character 'X'.
+#
+# NOTE: IMPLEMENT
 def updateBoard(cellName, currentPlayerCharacter):
-    for row in range(3):
-        for column in range(3):
-            if (board[row][column] == cellName):
-                board[row][column] = currentPlayerCharacter
-                return
+    global board
+
 
 
 # Update two variables:
 # 1. currentPlayerName
 # 2. currentPlayerCharacter
 #
-# So if players[0] was the currentPlayerName, udpate it to players[1],
+# If players[0] was the currentPlayerName, udpate it to players[1],
 # and vice versa.
 #
-# And, if the currentPlayerCharacter was "X", set it to "O", and vice
+# and...
+#
+# If the currentPlayerCharacter was "X", set it to "O", and vice
 # versa.
+#
+# NOTE: IMPLEMENT
 def nextPlayer():
     global currentPlayerName, currentPlayerCharacter
 
-    if (currentPlayerName == players[0]):
-        currentPlayerName = players[1]
-    else:
-        currentPlayerName = players[0]
-
-    if (currentPlayerCharacter == "X"):
-        currentPlayerCharacter = "O"
-    else:
-        currentPlayerCharacter = "X"
 
 
 # Returns:
@@ -161,62 +169,51 @@ def nextPlayer():
 # - False otherwise
 #
 # What should be checked here?
-# - Check rows 0, 1, 2
-# - Check columns 0, 1, 2
+# - Check rows 0, 1, 2 for the same X or O
+# - Check columns 0, 1, 2 for the same X or O
 # - Check the diagonal upper left to lower right
 # - Check the diagonal upper right to lower left
+#
+# NOTE: IMPLEMENT
 def playerWon():
-    for row in range(3):
-        if (board[row][0] == board[row][1] and board[row][1] == board[row][2]):
-            return True
-
-    for column in range(3):
-        if (board[0][column] == board[1][column] and board[1][column] == board[2][column]):
-            return True
-
-    if (board[0][0] == board[1][1] and board[1][1] == board[2][2]):
-        return True
-
-    if (board[0][2] == board[1][1] and board[1][1] == board[2][0]):
-        return True
-
     return False
+
 
 
 # Returns:
 # - True if the game is tied
 # - False otherwise
 #
-# A game is tied if all the cells contain an X or an O.
+# A game is tied if all the the values of the "board" global variable
+# contain an "X" or an "O".
 #
-# NOTE: This function ONLY needs to determine if the board is full,
-# if so, it returns True.  It does not need to determine whether there
-# is a winner.
+# NOTE: This function ONLY needs to determine if the board is full, if
+# so, it returns True.  It does not need to determine whether there is
+# a winner.
+#
+# NOTE: IMPLEMENT
 def tieGame():
-    for row in range(3):
-        for column in range(3):
-            if (board[row][column] != 'X' and board[row][column] != 'O'):
-                return False
-    return True
+    return False
+
 
 
 # This function returns:
 # - True if either wins[0] is 2 or wins[1] is 2
 # - False otherwise
 #
-# wins[0] represents the wins by players[0]
-# wins[1] represents the wins by players[1]
+# Note:
+# - wins[0] represents the wins by players[0]
+# - wins[1] represents the wins by players[1]
+#
+# NOTE: IMPLEMENT
 def matchWinner():
-    if (wins[0] == 2):
-        return True
-
-    if (wins[1] == 2):
-        return True
-
     return False
 
 
+
 # This function renders the tic tac toe board
+#
+# NOTE: DO NOT CHANGE
 def renderTheBoard():
     print()
     print()
@@ -233,6 +230,8 @@ def renderTheBoard():
             print()
 
 
+
+# NOTE: DO NOT CHANGE
 def summarizeTheGame():
     print()
 
@@ -248,6 +247,8 @@ def summarizeTheGame():
         wins[1] += 1
 
 
+
+# NOTE: DO NOT CHANGE
 def summarizeTheMatch():
     print()
     print()
@@ -256,6 +257,7 @@ def summarizeTheMatch():
     print("  " + players[0] + ": " + str(wins[0]))
     print("  " + players[1] + ": " + str(wins[1]))
     print("  Cat: " + str(wins[2]))
+
 
 
 main()
