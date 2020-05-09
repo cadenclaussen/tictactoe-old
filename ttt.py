@@ -60,6 +60,8 @@ def main():
 # NOTE: IMPLEMENT
 def getPlayerNames():
     global players
+    players[0] = input("first player name? ")
+    players[1] = input("second player name? ")
 
 
 
@@ -96,7 +98,7 @@ def initializeGame():
 # NOTE: IMPLEMENT
 def getPlayerStartingGame():
     global currentPlayerName, currentPlayerCharacter
-
+#  startPlayerName = random.choice(player1, player2)
 
 
 # This function returns a list of all the possible cell names where
@@ -109,7 +111,7 @@ def getPossibleCellNames():
     # Initialize the list
     possibleCellNames = []
 
-    // IMPLEMENT HERE to determine all the remaining possible cell names
+    # IMPLEMENT HERE to determine all the remaining possible cell names
 
     # Return the list of possible cell names
     return possibleCellNames
@@ -143,7 +145,7 @@ def getCurrentPlayersMove():
 # NOTE: IMPLEMENT
 def updateBoard(cellName, currentPlayerCharacter):
     global board
-
+    
 
 
 # Update two variables:
