@@ -1,13 +1,23 @@
 import random
 
 
-# NOTE: DO NOT CHANGE any of these global variables
+# NOTE: DO NOT EDIT ANY OF THESE LINES DEFINING THE GLOBAL VARIABLES
 
 # This data structure is a two dimensional list that represents a 3 by 3 tic
 # tac toe board.  It is initialized with letters to name each of the 9 cells
 # in a tic tac toe board to make it easier for a player to select which cell
 # to place their X or O.  For example, the top row has cells named a, b, and
 # c, going left to right.
+# 
+# Here is a visual example of a rendered board with the cell names where an
+# X or an O can be played:
+#
+#   a  |  b  |  c
+# -----------------
+#   d  |  e  |  f
+# -----------------
+#   g  |  h  |  i
+#
 board = [ [ 'a', 'b', 'c' ], [ 'd', 'e', 'f' ], [ 'g', 'h', 'i' ] ]
 
 # This is a list of the two player names
@@ -57,7 +67,7 @@ def main():
 # - players[0] should be set to the name of opponent 1
 # - players[1] should be set to the name of opponent 2
 #
-# NOTE: IMPLEMENT
+# NOTE: ADD CODE HERE!!!
 def getPlayerNames():
     global players
     players[0] = input("first player name? ")
@@ -95,7 +105,7 @@ def initializeGame():
 # Set currentPlayerCharacter to "X".  This will be the character of
 # the player who is moving first.
 #
-# NOTE: IMPLEMENT
+# NOTE: ADD CODE HERE!!!
 def getPlayerStartingGame():
     global currentPlayerName, currentPlayerCharacter
 #  startPlayerName = random.choice(player1, player2)
@@ -105,7 +115,7 @@ def getPlayerStartingGame():
 # the next move can be made.  This is any value in the global
 # variable "board" that does not contain an "X" or a "Y".
 #
-# NOTE: IMPLEMENT
+# NOTE: ADD CODE HERE!!!
 def getPossibleCellNames():
 
     # Initialize the list
@@ -142,7 +152,7 @@ def getCurrentPlayersMove():
 # name is 'a', replace the board[row][column] value that
 # contains an 'a' with the character 'X'.
 #
-# NOTE: IMPLEMENT
+# NOTE: ADD CODE HERE!!!
 def updateBoard(cellName, currentPlayerCharacter):
     global board
     
@@ -160,7 +170,7 @@ def updateBoard(cellName, currentPlayerCharacter):
 # If the currentPlayerCharacter was "X", set it to "O", and vice
 # versa.
 #
-# NOTE: IMPLEMENT
+# NOTE: ADD CODE HERE!!!
 def nextPlayer():
     global currentPlayerName, currentPlayerCharacter
 
@@ -176,7 +186,7 @@ def nextPlayer():
 # - Check the diagonal upper left to lower right
 # - Check the diagonal upper right to lower left
 #
-# NOTE: IMPLEMENT
+# NOTE: ADD CODE HERE!!!
 def playerWon():
     return False
 
@@ -193,7 +203,7 @@ def playerWon():
 # so, it returns True.  It does not need to determine whether there is
 # a winner.
 #
-# NOTE: IMPLEMENT
+# NOTE: ADD CODE HERE!!!
 def tieGame():
     return False
 
@@ -207,7 +217,7 @@ def tieGame():
 # - wins[0] represents the wins by players[0]
 # - wins[1] represents the wins by players[1]
 #
-# NOTE: IMPLEMENT
+# NOTE: ADD CODE HERE!!!
 def matchWinner():
     return False
 
