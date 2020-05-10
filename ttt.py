@@ -108,7 +108,7 @@ def initializeGame():
 # NOTE: ADD CODE HERE!!!
 def getPlayerStartingGame():
     global currentPlayerName, currentPlayerCharacter
-#  startPlayerName = random.choice(player1, player2)
+    # Add code here!
 
 
 # This function returns a list of all the possible cell names where
@@ -122,6 +122,7 @@ def getPossibleCellNames():
     possibleCellNames = []
 
     # IMPLEMENT HERE to determine all the remaining possible cell names
+    # Add code here!
 
     # Return the list of possible cell names
     return possibleCellNames
@@ -155,6 +156,7 @@ def getCurrentPlayersMove():
 # NOTE: ADD CODE HERE!!!
 def updateBoard(cellName, currentPlayerCharacter):
     global board
+    # Add code here!    
     
 
 
@@ -173,7 +175,7 @@ def updateBoard(cellName, currentPlayerCharacter):
 # NOTE: ADD CODE HERE!!!
 def nextPlayer():
     global currentPlayerName, currentPlayerCharacter
-
+    # Add code here!
 
 
 # Returns:
@@ -188,6 +190,7 @@ def nextPlayer():
 #
 # NOTE: ADD CODE HERE!!!
 def playerWon():
+    # Add code here!
     return False
 
 
@@ -205,6 +208,7 @@ def playerWon():
 #
 # NOTE: ADD CODE HERE!!!
 def tieGame():
+    # Add code here!
     return False
 
 
@@ -219,6 +223,7 @@ def tieGame():
 #
 # NOTE: ADD CODE HERE!!!
 def matchWinner():
+    # Add code here!
     return False
 
 
