@@ -8,7 +8,7 @@ import random
 # in a tic tac toe board to make it easier for a player to select which cell
 # to place their X or O.  For example, the top row has cells named a, b, and
 # c, going left to right.
-# 
+#
 # Here is a visual example of a rendered board with the cell names where an
 # X or an O can be played:
 #
@@ -156,8 +156,8 @@ def getCurrentPlayersMove():
 # NOTE: ADD CODE HERE!!!
 def updateBoard(cellName, currentPlayerCharacter):
     global board
-    # Add code here!    
-    
+    # Add code here!
+
 
 
 # Update two variables:
@@ -277,4 +277,5 @@ def summarizeTheMatch():
 
 
 
+# Start the match
 main()
