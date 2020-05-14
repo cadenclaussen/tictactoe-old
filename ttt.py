@@ -113,17 +113,45 @@ def getPlayerStartingGame():
 # the next move can be made.  This is any value in the global
 # variable "board" that does not contain an "X" or a "Y".
 #
-# NOTE: ADD CODE HERE!!!
-def getPossibleCellNames():
+#
+# For example, if the board looks like this:
+#
+# board = [ [ 'a', 'b', 'c' ], [ 'd', 'e', 'f' ], [ 'g', 'h', 'i' ] ]
+#
+#   a  |  b  |  c
+# -----------------
+#   d  |  e  |  f
+# -----------------
+#   g  |  h  |  i
+#
+# possibleCellNames = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i' ]
+#
+#
+# For example, if the board looks like this:
+#
+# board = [ [ 'X', 'b', 'O' ], [ 'd', 'X', 'f' ], [ 'g', 'h', 'i' ] ]
+#
+#   X  |  b  |  O
+# -----------------
+#   d  |  X  |  f
+# -----------------
+#   g  |  h  |  i
+#
+# possibleCellNames = [ b', d', f', 'g', 'h', 'i' ]
+#
+def getPossibleCellNamesForNextMove():
 
     # Initialize the list
-    possibleCellNames = []
+    possibleCellNamesForNextMove = []
+    for row in range(3):
+        for column in range(3):
+            if board[row][column] != 'X' and board[row][column] != 'O':
+                possibleCellNamesForNextMove.append(board[row][column]) 
 
-    # IMPLEMENT HERE to determine all the remaining possible cell names
-    # Add code here!
+    
 
     # Return the list of possible cell names
-    return possibleCellNames
+    return possibleCellNamesForNextMove
 
 
 
@@ -133,11 +161,11 @@ def getPossibleCellNames():
 # NOTE: DO NOT CHANGE
 def getCurrentPlayersMove():
     print()
-    possibleCellNames = getPossibleCellNames()
-    possibleCellNamesCommaSeparated = ", ".join(possibleCellNames)
+    possibleCellNamesForNextMove = getPossibleCellNamesForNextMove()
+    possibleCellNamesCommaSeparated = ", ".join(possibleCellNamesForNextMove)
     while True:
         cellName = input(currentPlayerName + " (" + currentPlayerCharacter + ") (" + possibleCellNamesCommaSeparated + ")? ")
-        if ((cellName in possibleCellNames) == False):
+        if ((cellName in possibleCellNamesForNextMove) == False):
             print("Invalid cell name: " + cellName)
             continue
         break
