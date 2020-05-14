@@ -179,10 +179,12 @@ def getCurrentPlayersMove():
 # name is 'a', replace the board[row][column] value that
 # contains an 'a' with the character 'X'.
 #
-# NOTE: ADD CODE HERE!!!
 def updateBoard(cellName, currentPlayerCharacter):
     global board
-    # Add code here!
+    for row in range(3):
+        for column in range(3):
+            if board[row][column] == cellName:
+                board[row][column] = currentPlayerCharacter
 
 
 
