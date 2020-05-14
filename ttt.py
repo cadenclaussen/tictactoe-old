@@ -108,7 +108,9 @@ def initializeGame():
 # NOTE: ADD CODE HERE!!!
 def getPlayerStartingGame():
     global currentPlayerName, currentPlayerCharacter
-    # Add code here!
+    currentPlayerName =  random.choice(players)
+    currentPlayerCharacter = "X"
+
 
 
 # This function returns a list of all the possible cell names where
@@ -175,7 +177,17 @@ def updateBoard(cellName, currentPlayerCharacter):
 # NOTE: ADD CODE HERE!!!
 def nextPlayer():
     global currentPlayerName, currentPlayerCharacter
-    # Add code here!
+
+    if currentPlayerName == players[0]:
+        currentPlayerName = players[1]
+    else:
+        currentPlayerName = players[0]
+
+    if currentPlayerCharacter == "X":
+        currentPlayerCharacter = "O"   
+    else:
+        currentPlayerCharacter = "X"
+
 
 
 # Returns:
