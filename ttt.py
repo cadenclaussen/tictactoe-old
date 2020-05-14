@@ -66,8 +66,6 @@ def main():
 # variable named players should get updated:
 # - players[0] should be set to the name of opponent 1
 # - players[1] should be set to the name of opponent 2
-#
-# NOTE: ADD CODE HERE!!!
 def getPlayerNames():
     global players
     players[0] = input("first player name? ")
@@ -104,8 +102,6 @@ def initializeGame():
 #
 # Set currentPlayerCharacter to "X".  This will be the character of
 # the player who is moving first.
-#
-# NOTE: ADD CODE HERE!!!
 def getPlayerStartingGame():
     global currentPlayerName, currentPlayerCharacter
     currentPlayerName =  random.choice(players)
@@ -173,8 +169,6 @@ def updateBoard(cellName, currentPlayerCharacter):
 #
 # If the currentPlayerCharacter was "X", set it to "O", and vice
 # versa.
-#
-# NOTE: ADD CODE HERE!!!
 def nextPlayer():
     global currentPlayerName, currentPlayerCharacter
 
