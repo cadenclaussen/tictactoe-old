@@ -227,7 +227,15 @@ def nextPlayer():
 # NOTE: ADD CODE HERE!!!
 def playerWon():
     # Add code here!
-    return False
+    for row in range(3):
+        if board[row] == ["X", "X", "X"]:
+            return True
+        if board[row] == ["O", "O", "O"]:
+            return True
+        if board[column] == ["X", "X", "X"]:
+            return True
+    else:
+        return False
 
 
 
@@ -244,10 +252,16 @@ def playerWon():
 #
 # NOTE: ADD CODE HERE!!!
 def tieGame():
-    # Add code here!
-    return False
-
-
+    for row in range(3):
+        for column in range(3):
+            if board[row][column] == "X" or board[row][column] == "O":
+                continue
+    if 
+        
+    else:
+        return False
+        break
+    
 
 # This function returns:
 # - True if either wins[0] is 2 or wins[1] is 2
@@ -257,9 +271,11 @@ def tieGame():
 # - wins[0] represents the wins by players[0]
 # - wins[1] represents the wins by players[1]
 #
-# NOTE: ADD CODE HERE!!!
 def matchWinner():
-    # Add code here!
+    if wins[0] == 2:
+        return True
+    if wins[1] == 2:
+        return True
     return False
 
 
